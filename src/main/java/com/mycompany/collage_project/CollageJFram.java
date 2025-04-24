@@ -27,9 +27,21 @@ public class CollageJFram extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenuItem2.setText("jMenuItem2");
+
+        jMenuItem3.setText("jMenuItem3");
+
+        jMenuItem4.setText("jMenuItem4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,13 +93,15 @@ public class CollageJFram extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+     // عند الضغط على زر "Insert"، يتم فتح نافذة InsertJFrame
+    InsertJFrame insertFrame = new InsertJFrame();  // إنشاء الكائن من InsertJFrame
+    insertFrame.setVisible(true);  // عرض النافذة
+    this.setVisible(false);  // إخفاء نافذة CollageJFrame
+// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void updateHandler(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateHandler
-        int nu=0;
-        nu+=1;
-        System.out.println(nu);  
+ 
         // TODO add your handling code here:
     }//GEN-LAST:event_updateHandler
 
@@ -130,5 +144,9 @@ public class CollageJFram extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     // End of variables declaration//GEN-END:variables
 }
