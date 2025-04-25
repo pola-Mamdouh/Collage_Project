@@ -8,7 +8,7 @@ public class databaseConnection {
 
     static Connection con;
 
-    static void Open() {
+    public static Connection getConnection() {
         try {
             // تحميل درايفر SQL Server
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -24,5 +24,6 @@ public class databaseConnection {
         } catch (ClassNotFoundException e) {
             System.out.println("Driver not found: " + e.getMessage());
         }
+        return con;
     }
 }

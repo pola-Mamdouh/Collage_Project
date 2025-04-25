@@ -94,7 +94,7 @@ public class CollageJFram extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      // عند الضغط على زر "Insert"، يتم فتح نافذة InsertJFrame
-    InsertJFrame insertFrame = new InsertJFrame();  // إنشاء الكائن من InsertJFrame
+    InsertFrame insertFrame = new InsertFrame();  // إنشاء الكائن من InsertJFrame
     insertFrame.setVisible(true);  // عرض النافذة
     this.setVisible(false);  // إخفاء نافذة CollageJFrame
 // TODO add your handling code here:
