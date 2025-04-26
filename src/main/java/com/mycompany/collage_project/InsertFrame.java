@@ -21,7 +21,7 @@ public class InsertFrame extends JFrame {
 
         // Table Selector
         tableSelector = new JComboBox<>(new String[]{"student", "instractor", "course", "department"});
-        tableSelector.setBounds(300, 20, 150, 25);
+        tableSelector.setBounds(300, 60, 150, 25);
         add(tableSelector);
 
         // Student/Instructor Panel
@@ -118,7 +118,7 @@ public class InsertFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose(); // يغلق InsertFrame
-                new CollageJFram().setVisible(true); // يفتح CollageJFrame
+                new CollageFrame().setVisible(true); // يفتح CollageJFrame
             }
         });
 
@@ -133,8 +133,11 @@ public class InsertFrame extends JFrame {
     private void updateFieldsVisibility() {
         String selected = (String) tableSelector.getSelectedItem();
         boolean isStudentOrInstructor = selected.equals("student") || selected.equals("instractor");
+
         boolean isCourse = selected.equals("course");
+
         boolean isDepartment = selected.equals("department");
+
 
         studentInstructorPanel.setVisible(isStudentOrInstructor);
         coursePanel.setVisible(isCourse);
@@ -149,9 +152,9 @@ public class InsertFrame extends JFrame {
             if (selected.equals("student")) {
                 pstmt = conn.prepareStatement("INSERT INTO student (student_id, first_name, last_name, phone) VALUES (?, ?, ?, ?)");
                 pstmt.setInt(1, Integer.parseInt(idField.getText()));
-                pstmt.setString(2, firstNameField.getText());
+                pstmt.setString(2, firstNameField.getText()); 
                 pstmt.setString(3, lastNameField.getText());
-                pstmt.setString(4, phoneField.getText());
+                pstmt.setString(4, phoneField.getText()); 
             } else if (selected.equals("instractor")) {
                 pstmt = conn.prepareStatement("INSERT INTO instractor (instractor_id, first_name, last_name, phone) VALUES (?, ?, ?, ?)");
                 pstmt.setInt(1, Integer.parseInt(idField.getText()));
@@ -171,7 +174,8 @@ public class InsertFrame extends JFrame {
                 return;
             }
 
-            int result = pstmt.executeUpdate();
+            int result = pstmt.executeUpdate(); // return number of successful rows 
+
             if (result > 0) {
                 JOptionPane.showMessageDialog(this, "Insert successful into " + selected + "!");
                 clearFields();
