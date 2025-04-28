@@ -11,7 +11,6 @@ public class databaseConnection {
     public static Connection getConnection() {
         try {
             // تحميل درايفر SQL Server
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
             // رابط الاتصال بـ SQL Server
             String url = "jdbc:sqlserver://localhost:1433;databaseName=collage;encrypt=false";
@@ -21,8 +20,6 @@ public class databaseConnection {
             System.out.println("Connected to SQL Server");
         } catch (SQLException e) {
             System.out.println("SQL Error: " + e.getMessage());
-        } catch (ClassNotFoundException e) {
-            System.out.println("Driver not found: " + e.getMessage());
         }
         return con;
     }
